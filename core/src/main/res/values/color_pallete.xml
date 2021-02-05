@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="silver_chalice">#AAAAAA</color>
+    <color name="white">#ffffff</color>
+
+    <color name="mine_shaft_700">#616161</color>
+    <color name="mine_shaft_800">#424242</color>
+    <color name="mine_shaft_900">#212121</color>
+
+    <color name="gray_50">#FAFAFA</color>
+
+    <color name="manatee">#919099</color>
+    <color name="steel_gray">#1A1824</color>
+    <color name="alto">#E0E0E0</color>
+
+    <color name="alabaster_50">#FAFAFA</color>
+    <color name="alabaster_100">#F5F5F5</color>
+    <color name="alabaster_200">#EEEEEE</color>
+
+    <color name="primaryColor">#304ffe</color>
+    <color name="primaryLightColor">#7a7cff</color>
+    <color name="primaryDarkColor">#0026ca</color>
+    <color name="secondaryColor">#eceff1</color>
+    <color name="secondaryLightColor">#ffffff</color>
+    <color name="secondaryDarkColor">#babdbe</color>
+    <color name="primaryTextColor">#ffffff</color>
+    <color name="secondaryTxtColor">#000000</color>
+
+
+
+
+    <!-- colors -->
+    <color name="red">#D50000</color>
+    <color name="secondary_red">#d32f2f</color>
+    <color name="final_red">#ef5350</color>
+    <color name="pink">#E91E63</color>
+    <color name="purple">#9C27B0</color>
+    <color name="deep_purple">#673AB7</color>
+    <color name="indigo">#3F51B5</color>
+    <color name="blue">#2196F3</color>
+    <color name="teal">#009688</color>
+    <color name="green">#4CAF50</color>
+    <color name="deep_orange">#FF5722</color>
+
+    <color name="cinnabar">#EB322C</color>
+    <color name="atlantis">#A7C73E</color>
+    <color name="picton_blue">#4AAAE6</color>
+    <color name="viridian">#3A8365</color>
+    <color name="tulip_tree">#F1AF3D</color>
+    <color name="cerise">#D63080</color>
+
+</resources>

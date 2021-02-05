@@ -1,0 +1,15 @@
+Properties properties = new Properties()
+properties.load(project.rootProject.file("local.properties").newDataInputStream())
+
+def getReleaseVersionCode() {
+    return "${major}".toInteger() * 10000 + "${minor}".toInteger() * 1000 + "${patch}".toInteger() * 100 + "${buildNumber}".toInteger()
+}
+
+ext {
+    appVersionName = "${major}.${minor}.${patch}(${buildNumber})"
+    appMinSdkVersion = 23
+    appTargetSdkVersion = 30
+    appCompileSdkVersion = 30
+    appVersionCode = getReleaseVersionCode()
+    appBuildToolsVersion = "30.0.0"
+}

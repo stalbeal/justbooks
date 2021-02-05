@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_margin="@dimen/spacing_extra_small"
+    app:cardCornerRadius="8dp">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clBookContainer"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="@dimen/spacing_medium">
+
+        <ImageView
+            android:id="@+id/ivBookImage"
+            android:layout_width="80dp"
+            android:layout_height="120dp"
+            android:background="@color/gray_50"
+            android:src="@drawable/ic_book"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/llInfoContainer"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <LinearLayout
+            android:id="@+id/llInfoContainer"
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:orientation="vertical"
+            app:layout_constraintBottom_toTopOf="@id/rbBookRating"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/ivBookImage"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:id="@+id/tvBookTitle"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:maxLines="2"
+                android:text="titulo"
+                android:textAppearance="@style/TextAppearance.JustBooks.Title.S"
+                android:textColor="@color/steel_gray"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/tvBookAuthor"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/spacing_small"
+                android:ellipsize="end"
+                android:gravity="left"
+                android:maxLines="2"
+                android:text="titulo"
+                android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
+                android:textColor="@color/steel_gray" />
+
+
+        </LinearLayout>
+
+        <RatingBar
+            android:id="@+id/rbBookRating"
+            style="@style/customRatingBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:max="5"
+            android:progressTint="@color/primaryColor"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@id/tvRatingCount"
+            app:layout_constraintStart_toStartOf="@+id/llInfoContainer"
+            app:layout_constraintTop_toBottomOf="@id/llInfoContainer" />
+
+        <TextView
+            android:id="@+id/tvRatingCount"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_extra_small"
+            android:layout_marginEnd="@dimen/spacing_extra_small"
+            android:ellipsize="end"
+            android:gravity="center_vertical"
+            android:maxLines="1"
+            android:text="titulo"
+            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
+            android:textColor="@color/steel_gray"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="@id/rbBookRating"
+            app:layout_constraintStart_toEndOf="@id/rbBookRating"
+            app:layout_constraintTop_toTopOf="@id/rbBookRating" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</androidx.cardview.widget.CardView>

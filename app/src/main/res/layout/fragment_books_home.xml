@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".BooksHomeFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvCategories"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:orientation="horizontal"
+            app:layout_constraintBottom_toTopOf="@id/tvOrderByNewest"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:listitem="@layout/item_category_horizontal" />
+
+        <TextView
+            android:id="@+id/tvOrderByNewest"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:text="Newest"
+            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toStartOf="@id/vSeparator"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategories" />
+
+        <View
+            android:id="@+id/vSeparator"
+            android:layout_width="3dp"
+            android:layout_height="0dp"
+            android:layout_margin="4dp"
+            android:background="@drawable/vertical_separator"
+            app:layout_constraintEnd_toStartOf="@id/tvOrderByRelevance"
+            app:layout_constraintBottom_toBottomOf="@id/tvOrderByNewest"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategories" />
+
+        <TextView
+            android:id="@+id/tvOrderByRelevance"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/spacing_small"
+            android:layout_marginEnd="@dimen/spacing_small"
+            android:text="Relevance"
+            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/rvCategories" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rvBooks"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvOrderByNewest"
+            tools:listitem="@layout/item_books_list" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+
+</FrameLayout>

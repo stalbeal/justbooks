@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <dimen name="textappearence_titles_text_size">16sp</dimen>
+    <dimen name="textappearence_titles_line_spacing">6sp</dimen>
+    <dimen name="textappearence_titles_letter_spacing">-0.01</dimen>
+
+    <dimen name="textappearence_titlem_text_size">24sp</dimen>
+    <dimen name="textappearence_titlem_line_spacing">6sp</dimen>
+    <dimen name="textappearence_titlem_letter_spacing">-0.01</dimen>
+
+    <dimen name="textappearence_titlel_text_size">28sp</dimen>
+    <dimen name="textappearence_titlel_line_spacing">6sp</dimen>
+    <dimen name="textappearence_titlel_letter_spacing">-0.01</dimen>
+
+    <dimen name="textappearence_subtitlel_text_size">28sp</dimen>
+    <dimen name="textappearence_subtitlel_line_spacing">6sp</dimen>
+    <dimen name="textappearence_subtitlel_letter_spacing">-0.01</dimen>
+
+    <dimen name="textappearence_subtitlem_text_size">28sp</dimen>
+    <dimen name="textappearence_subtitlem_line_spacing">6sp</dimen>
+    <dimen name="textappearence_subtitlem_letter_spacing">-0.01</dimen>
+
+    <dimen name="textappearence_subtitles_text_size">28sp</dimen>
+    <dimen name="textappearence_subtitles_line_spacing">6sp</dimen>
+    <dimen name="textappearence_subtitles_letter_spacing">-0.01</dimen>
+
+    <dimen name="textappearence_bodys_text_size">12sp</dimen>
+    <dimen name="textappearence_bodys_line_spacing">5sp</dimen>
+    <dimen name="textappearence_bodys_letter_spacing">-0.01</dimen>
+
+    <dimen name="textappearence_bodym_text_size">14sp</dimen>
+    <dimen name="textappearence_bodym_line_spacing">5sp</dimen>
+    <dimen name="textappearence_bodym_letter_spacing">-0.01</dimen>
+
+    <dimen name="textappearence_bodyl_text_size">16sp</dimen>
+    <dimen name="textappearence_bodyl_line_spacing">5sp</dimen>
+    <dimen name="textappearence_bodyl_letter_spacing">-0.01</dimen>
+
+    <dimen name="spacing_extra_small">4dp</dimen>
+    <dimen name="spacing_small">8dp</dimen>
+    <dimen name="spacing_medium">16dp</dimen>
+    <dimen name="spacing_large">24dp</dimen>
+
+    <dimen name="corner_radius_extra_small">4dp</dimen>
+    <dimen name="corner_radius_small">8dp</dimen>
+    <dimen name="corner_radius_medium">16dp</dimen>
+    <dimen name="corner_radius_large">24dp</dimen>
+</resources>

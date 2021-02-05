@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/booksHomeFragment">
+
+    <fragment
+        android:id="@+id/booksHomeFragment"
+        android:name="com.saba.justbooks.BooksHomeFragment"
+        android:label="fragment_books_home"
+        tools:layout="@layout/fragment_books_home" >
+        <action
+            android:id="@+id/action_booksHomeFragment_to_categorySelectorActivity"
+            app:destination="@id/categorySelectorActivity" />
+    </fragment>
+    <activity
+        android:id="@+id/categorySelectorActivity"
+        android:name="com.saba.categoryselector.CategorySelectorActivity"
+        android:label="CategorySelectorActivity" />
+</navigation>

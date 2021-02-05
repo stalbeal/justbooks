@@ -1,0 +1,6 @@
+apply from: "$rootProject.projectDir/shared.gradle"
+
+dependencies {
+    implementation kotlinReflect
+    implementation project(path: ':core')
+}
