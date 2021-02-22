@@ -1,8 +1,8 @@
-package com.saba.justbooks.com.saba.justbooks.home.mvi
+package com.saba.justbooks.home.mvi
 
 import com.saba.core.base.Result
 import com.saba.core.usecases.category.model.Category
-import com.saba.justbooks.com.saba.justbooks.home.models.Book
+import com.saba.core.models.Book
 
 sealed class BooksHomeResult : Result {
 

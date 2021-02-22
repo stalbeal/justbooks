@@ -4,15 +4,17 @@ import com.saba.core.base.AbstractViewModel
 import com.saba.core.base.CoroutineContextProvider
 import com.saba.core.base.Reducer
 import com.saba.core.usecases.category.GetCategoriesUseCase
-import com.saba.justbooks.com.saba.justbooks.home.mvi.BooksHomeResult
-import com.saba.justbooks.com.saba.justbooks.home.mvi.BooksHomeViewState
-import com.saba.justbooks.com.saba.justbooks.home.mvi.BooksHomeWish
-import com.saba.justbooks.com.saba.justbooks.home.usecases.GetBooksUseCase
+import com.saba.justbooks.home.mvi.BooksHomeResult
+import com.saba.justbooks.home.mvi.BooksHomeViewState
+import com.saba.justbooks.home.mvi.BooksHomeWish
+import com.saba.justbooks.home.usecases.GetBooksByCategoryUseCase
+import com.saba.justbooks.home.usecases.GetBooksUseCase
 import kotlinx.coroutines.flow.*
 import javax.inject.Inject
 
 class BooksHomeViewModel @Inject constructor(
     private val getCategoriesUseCase: GetCategoriesUseCase,
+    private val getBooksByCategoryUseCase: GetBooksByCategoryUseCase,
     private val getBooksUseCase: GetBooksUseCase,
     override val reducer: Reducer<@JvmSuppressWildcards BooksHomeResult, @JvmSuppressWildcards BooksHomeViewState>,
     override val coroutineContextProvider: CoroutineContextProvider
@@ -27,7 +29,7 @@ class BooksHomeViewModel @Inject constructor(
     }
 
     private fun getBooksByCategory(category: String): Flow<BooksHomeResult> =
-        getBooksUseCase.execute().map {
+        getBooksByCategoryUseCase.execute(category).map {
             BooksHomeResult.BooksObtained(it)
         }.flowOn(coroutineContextProvider.backgroundDispatcher)
 

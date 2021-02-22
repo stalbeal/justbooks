@@ -1,4 +1,4 @@
-package com.saba.justbooks.com.saba.justbooks.home.di
+package com.saba.justbooks.home.di
 
 import javax.inject.Scope
 

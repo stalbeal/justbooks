@@ -7,18 +7,19 @@ import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.lifecycleScope
+import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.saba.core.adapter.CategoryClickListener
 import com.saba.core.adapter.CategorySelectorAdapter
 import com.saba.core.adapter.ViewCategory
 import com.saba.core.di.CoreComponentProvider
-import com.saba.justbooks.com.saba.justbooks.home.adapter.BooksAdapter
-import com.saba.justbooks.com.saba.justbooks.home.adapter.BooksClickListener
-import com.saba.justbooks.com.saba.justbooks.home.di.DaggerHomeComponent
-import com.saba.justbooks.com.saba.justbooks.home.models.ViewBook
-import com.saba.justbooks.com.saba.justbooks.home.mvi.BooksHomeViewState
-import com.saba.justbooks.com.saba.justbooks.home.mvi.BooksHomeWish
+import com.saba.core.models.ViewBook
+import com.saba.justbooks.home.mvi.BooksHomeViewState
 import com.saba.justbooks.databinding.FragmentBooksHomeBinding
+import com.saba.justbooks.home.adapter.BooksAdapter
+import com.saba.justbooks.home.adapter.BooksClickListener
+import com.saba.justbooks.home.di.DaggerHomeComponent
+import com.saba.justbooks.home.mvi.BooksHomeWish
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
 import javax.inject.Inject
@@ -86,7 +87,7 @@ class BooksHomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL ,false)
             adapter = BooksAdapter(object : BooksClickListener {
                 override fun onClick(book: ViewBook) {
-
+                    view?.findNavController()?.navigate(R.id.action_booksHomeFragment_to_bookDetail)
                 }
             })
         }

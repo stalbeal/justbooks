@@ -1,11 +1,11 @@
-package com.saba.justbooks.com.saba.justbooks.home.mvi
+package com.saba.justbooks.home.mvi
 
 import com.saba.core.adapter.ViewCategory
 import com.saba.core.base.ViewState
-import com.saba.justbooks.com.saba.justbooks.home.models.ViewBook
-import javax.inject.Inject
+import com.saba.core.models.ViewBook
+import com.saba.justbooks.home.mvi.BooksHomeFailure
 
-data class BooksHomeViewState @Inject constructor(
+data class BooksHomeViewState(
     override val isIdling: Boolean,
     val isLoading: Boolean,
     val books: Collection<ViewBook>?,

@@ -1,10 +1,10 @@
-package com.saba.justbooks.com.saba.justbooks.home.di
+package com.saba.justbooks.home.di
 
 import com.saba.core.di.CoreComponent
 import com.saba.justbooks.BooksHomeFragment
-import com.saba.justbooks.com.saba.justbooks.home.mvi.BooksHomeReducer
-import com.saba.justbooks.com.saba.justbooks.home.repositories.BookRepository
-import com.saba.justbooks.com.saba.justbooks.home.usecases.GetBooksUseCase
+import com.saba.justbooks.home.mvi.BooksHomeReducer
+import com.saba.justbooks.home.repositories.BookRepository
+import com.saba.justbooks.home.usecases.GetBooksUseCase
 import dagger.Component
 
 @ExperimentalStdlibApi

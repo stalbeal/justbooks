@@ -1,8 +1,8 @@
-package com.saba.justbooks.com.saba.justbooks.home.mvi
+package com.saba.justbooks.home.mvi
 
 import com.saba.core.adapter.ViewCategory
 import com.saba.core.base.Reducer
-import com.saba.justbooks.com.saba.justbooks.home.models.ViewBook
+import com.saba.core.models.ViewBook
 import javax.inject.Inject
 
 class BooksHomeReducer @Inject constructor() : Reducer<BooksHomeResult, BooksHomeViewState> {

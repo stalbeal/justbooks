@@ -1,6 +1,6 @@
-package com.saba.justbooks.com.saba.justbooks.home.repositories
+package com.saba.justbooks.home.repositories
 
-import com.saba.justbooks.com.saba.justbooks.home.models.Book
+import com.saba.core.models.Book
 
 interface BookRepository {
 

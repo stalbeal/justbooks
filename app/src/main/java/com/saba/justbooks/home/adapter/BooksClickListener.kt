@@ -1,6 +1,6 @@
-package com.saba.justbooks.com.saba.justbooks.home.adapter
+package com.saba.justbooks.home.adapter
 
-import com.saba.justbooks.com.saba.justbooks.home.models.ViewBook
+import com.saba.core.models.ViewBook
 
 interface BooksClickListener {
 

@@ -1,12 +1,11 @@
-package com.saba.justbooks.com.saba.justbooks.home.adapter
+package com.saba.justbooks.home.adapter
 
 import android.view.View
 import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.saba.core.extensions.setImage
-import com.saba.justbooks.com.saba.justbooks.home.models.ImageLink
-import com.saba.justbooks.com.saba.justbooks.home.models.ViewBook
+import com.saba.core.models.ImageLink
+import com.saba.core.models.ViewBook
 import com.saba.justbooks.databinding.ItemBooksListBinding
 
 class BooksViewHolder(private val binding: ItemBooksListBinding) :
@@ -29,16 +28,19 @@ class BooksViewHolder(private val binding: ItemBooksListBinding) :
             setImage(binding.ivBookImage, it)
 
         }
+        itemView.setOnClickListener {
+            booksClickListener.onClick(item)
+        }
     }
 
     private fun setImage(view: ImageView, imageLink: ImageLink) {
         when {
-            imageLink.smallThumbnail != null -> view.setImage(imageLink.smallThumbnail.replace("http", "https"))
-            imageLink.thumbnail != null -> view.setImage(imageLink.thumbnail.replace("http", "https"))
-            imageLink.small != null -> view.setImage(imageLink.small.replace("http", "https"))
-            imageLink.medium != null -> view.setImage(imageLink.medium.replace("http", "https"))
-            imageLink.large != null -> view.setImage(imageLink.large.replace("http", "https"))
-            imageLink.extraLarge != null -> view.setImage(imageLink.extraLarge.replace("http", "https"))
+            imageLink.smallThumbnail != null -> view.setImage(imageLink.smallThumbnail!!.replace("http", "https"))
+            imageLink.thumbnail != null -> view.setImage(imageLink.thumbnail!!.replace("http", "https"))
+            imageLink.small != null -> view.setImage(imageLink.small!!.replace("http", "https"))
+            imageLink.medium != null -> view.setImage(imageLink.medium!!.replace("http", "https"))
+            imageLink.large != null -> view.setImage(imageLink.large!!.replace("http", "https"))
+            imageLink.extraLarge != null -> view.setImage(imageLink.extraLarge!!.replace("http", "https"))
         }
     }
 

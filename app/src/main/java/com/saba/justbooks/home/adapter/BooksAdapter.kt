@@ -1,11 +1,11 @@
-package com.saba.justbooks.com.saba.justbooks.home.adapter
+package com.saba.justbooks.home.adapter
 
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.DiffUtil
 import androidx.recyclerview.widget.ListAdapter
-import com.saba.justbooks.com.saba.justbooks.home.models.ViewBook
+import com.saba.core.models.ViewBook
 import com.saba.justbooks.databinding.ItemBooksListBinding
 
 class BooksAdapter(private val booksClickListener: BooksClickListener) :

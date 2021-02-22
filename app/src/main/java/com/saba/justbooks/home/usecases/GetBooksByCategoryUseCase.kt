@@ -1,7 +1,7 @@
-package com.saba.justbooks.com.saba.justbooks.home.usecases
+package com.saba.justbooks.home.usecases
 
-import com.saba.justbooks.com.saba.justbooks.home.models.Book
-import com.saba.justbooks.com.saba.justbooks.home.repositories.BookRepository
+import com.saba.core.models.Book
+import com.saba.justbooks.home.repositories.BookRepository
 import kotlinx.coroutines.ExperimentalCoroutinesApi
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
