@@ -13,9 +13,20 @@
         <action
             android:id="@+id/action_booksHomeFragment_to_categorySelectorActivity"
             app:destination="@id/categorySelectorActivity" />
+        <action
+            android:id="@+id/action_booksHomeFragment_to_bookDetail"
+            app:destination="@id/bookDetail" />
+
     </fragment>
+
     <activity
         android:id="@+id/categorySelectorActivity"
         android:name="com.saba.categoryselector.CategorySelectorActivity"
         android:label="CategorySelectorActivity" />
+
+    <fragment
+        android:id="@+id/bookDetail"
+        android:name="com.saba.bookdetail.BookDetailFragment"
+        android:label="Detalle"/>
+
 </navigation>
