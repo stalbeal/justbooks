@@ -1,4 +1,4 @@
-package com.saba.justbooks.com.saba.justbooks.home.models
+package com.saba.core.models
 
 import com.saba.core.network.models.APIItemResponse
 

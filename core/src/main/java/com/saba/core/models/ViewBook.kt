@@ -1,4 +1,4 @@
-package com.saba.justbooks.com.saba.justbooks.home.models
+package com.saba.core.models
 
 class ViewBook(
     val industryIdentifier: List<IndustryIdentifier>,
