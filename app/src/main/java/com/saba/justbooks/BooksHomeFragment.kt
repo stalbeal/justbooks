@@ -87,7 +87,9 @@ class BooksHomeFragment : Fragment() {
             layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL ,false)
             adapter = BooksAdapter(object : BooksClickListener {
                 override fun onClick(book: ViewBook) {
-                    view?.findNavController()?.navigate(R.id.action_booksHomeFragment_to_bookDetail)
+
+                    val action = BooksHomeFragmentDirections.actionBooksHomeFragmentToBookDetail(book.googleBooksId)
+                    view?.findNavController()?.navigate(action)
                 }
             })
         }

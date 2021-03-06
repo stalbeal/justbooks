@@ -17,21 +17,9 @@ class GetBooksUseCase @Inject constructor(
 ) {
 
     fun execute(): Flow<Collection<Book>> = getSelectedCategoriesUseCase.execute().map {
-        it.map { category ->
-            flow {
-                emit(bookRepository.getBooksByCategories("subject: ${category.id}"))
-            }
-        }
-    }.flatMapLatest {
-        combine(it) { books ->
-            books.toList()
-        }.map { booksByCategory ->
-            val bookSet = HashSet<Book>()
-            booksByCategory.map { books ->
-                bookSet.addAll(books)
-            }
-            bookSet
-        }
+        it.take(3).map { category ->
+            bookRepository.getBooksByCategories("subject: ${category.id}")
+        }.flatten().toSet()
     }
 
 

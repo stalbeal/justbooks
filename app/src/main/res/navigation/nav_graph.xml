@@ -15,7 +15,12 @@
             app:destination="@id/categorySelectorActivity" />
         <action
             android:id="@+id/action_booksHomeFragment_to_bookDetail"
-            app:destination="@id/bookDetail" />
+            app:destination="@id/bookDetail">
+            <argument
+                android:name="isbn"
+                app:argType="string"
+                android:defaultValue="" />
+        </action>
 
     </fragment>
 

@@ -35,12 +35,12 @@ class BooksViewHolder(private val binding: ItemBooksListBinding) :
 
     private fun setImage(view: ImageView, imageLink: ImageLink) {
         when {
-            imageLink.smallThumbnail != null -> view.setImage(imageLink.smallThumbnail!!.replace("http", "https"))
-            imageLink.thumbnail != null -> view.setImage(imageLink.thumbnail!!.replace("http", "https"))
-            imageLink.small != null -> view.setImage(imageLink.small!!.replace("http", "https"))
-            imageLink.medium != null -> view.setImage(imageLink.medium!!.replace("http", "https"))
-            imageLink.large != null -> view.setImage(imageLink.large!!.replace("http", "https"))
-            imageLink.extraLarge != null -> view.setImage(imageLink.extraLarge!!.replace("http", "https"))
+            imageLink.smallThumbnail != null -> view.setImage(imageLink.smallThumbnail!!)
+            imageLink.thumbnail != null -> view.setImage(imageLink.thumbnail!!)
+            imageLink.small != null -> view.setImage(imageLink.small!!)
+            imageLink.medium != null -> view.setImage(imageLink.medium!!)
+            imageLink.large != null -> view.setImage(imageLink.large!!)
+            imageLink.extraLarge != null -> view.setImage(imageLink.extraLarge!!)
         }
     }
 

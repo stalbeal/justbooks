@@ -33,7 +33,7 @@ object NetworkModule {
             .readTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .writeTimeout(TIME_OUT_SECONDS, TimeUnit.SECONDS)
             .addInterceptor(HttpLoggingInterceptor().apply {
-                level = HttpLoggingInterceptor.Level.BODY
+                level = HttpLoggingInterceptor.Level.HEADERS
             })
             .addInterceptor(ErrorInterceptor())
 

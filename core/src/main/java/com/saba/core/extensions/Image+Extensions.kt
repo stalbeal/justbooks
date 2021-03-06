@@ -13,6 +13,7 @@ interface ImageLoaderCallback {
 }
 
 fun ImageView.setImage(url: String) {
-    Glide.with(context).load(url).into(this)
+
+    Glide.with(context).load(url.replace("http", "https")).into(this)
 }
 

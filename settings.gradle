@@ -1,3 +1,4 @@
+include ':bookdetail'
 include ':categoryselector'
 include ':core'
 include ':app'

@@ -35,7 +35,7 @@
             android:maxLines="2"
             android:ellipsize="end"
             android:text="titulo"
-            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
+            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle1"
             android:textColor="@color/white"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"

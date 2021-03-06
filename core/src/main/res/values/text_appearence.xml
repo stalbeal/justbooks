@@ -2,86 +2,86 @@
 <resources>
 
     <style name="TextAppearance" />
+
     <style name="TextAppearance.JustBooks" />
 
-    <style name="TextAppearance.JustBooks.Title">
-        <item name="android:fontFamily">@font/worksans_medium</item>
-        <item name="android:textStyle">normal</item>
-    </style>
+        <style name="TextAppearance.JustBooks.Headline1" parent="TextAppearance.MaterialComponents.Headline1">
+            <item name="fontFamily">@font/open_sans</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+            <item name="android:textSize">95sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Headline2" parent="TextAppearance.MaterialComponents.Headline2">
+            <item name="fontFamily">@font/open_sans</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+            <item name="android:textSize">59sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Headline3" parent="TextAppearance.MaterialComponents.Headline3">
+            <item name="fontFamily">@font/open_sans</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+            <item name="android:textSize">48sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Headline4" parent="TextAppearance.MaterialComponents.Headline4">
+            <item name="fontFamily">@font/open_sans</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+            <item name="android:textSize">34sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Headline5" parent="TextAppearance.MaterialComponents.Headline5">
+            <item name="fontFamily">@font/open_sans</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+            <item name="android:textSize">24sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Headline6" parent="TextAppearance.MaterialComponents.Headline6">
+            <item name="fontFamily">@font/open_sans</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+            <item name="android:textSize">20sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Subtitle1" parent="TextAppearance.MaterialComponents.Subtitle1">
+            <item name="fontFamily">@font/open_sans</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+            <item name="android:textSize">16sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Subtitle2" parent="TextAppearance.MaterialComponents.Subtitle2">
+            <item name="fontFamily">@font/open_sans</item>
+            <item name="android:fontFamily">@font/open_sans</item>
+            <item name="android:textSize">14sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Body1" parent="TextAppearance.MaterialComponents.Body1">
+            <item name="fontFamily">@font/source_sans_pro</item>
+            <item name="android:fontFamily">@font/source_sans_pro</item>
+            <item name="android:textSize">17sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Body2" parent="TextAppearance.MaterialComponents.Body2">
+            <item name="fontFamily">@font/source_sans_pro</item>
+            <item name="android:fontFamily">@font/source_sans_pro</item>
+            <item name="android:textSize">15sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Button" parent="TextAppearance.MaterialComponents.Button">
+            <item name="fontFamily">@font/source_sans_pro</item>
+            <item name="android:fontFamily">@font/source_sans_pro</item>
+            <item name="android:textSize">15sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Caption" parent="TextAppearance.MaterialComponents.Caption">
+            <item name="fontFamily">@font/source_sans_pro</item>
+            <item name="android:fontFamily">@font/source_sans_pro</item>
+            <item name="android:textSize">13sp</item>
+        </style>
+        <style name="TextAppearance.JustBooks.Overline" parent="TextAppearance.MaterialComponents.Overline">
+            <item name="fontFamily">@font/source_sans_pro</item>
+            <item name="android:fontFamily">@font/source_sans_pro</item>
+            <item name="android:textSize">11sp</item>
+        </style>
 
-    <style name="TextAppearance.JustBooks.Subtitle">
-        <item name="android:fontFamily">@font/worksans_regular</item>
-        <item name="android:textStyle">normal</item>
+    <style name="TextAppearance.JustBooks.PageTitle" parent="TextAppearance.JustBooks.Headline6"/>
+    <style name="TextAppearance.JustBooks.ListTitle" parent="TextAppearance.JustBooks.Headline6"/>
+    <style name="TextAppearance.JustBooks.ListSubtitle" parent="TextAppearance.JustBooks.Body1"/>
+    <style name="TextAppearance.JustBooks.Subtitle" parent="TextAppearance.JustBooks.Subtitle1">
+        <item name="fontFamily">@font/open_sans_semibold</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
     </style>
-
-    <style name="TextAppearance.JustBooks.Intermedium">
-        <item name="android:fontFamily">@font/worksans_regular</item>
-        <item name="android:textStyle">bold</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Body">
-        <item name="android:fontFamily">@font/worksans_light</item>
-        <item name="android:textStyle">normal</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Title.S">
-        <item name="android:textSize">@dimen/textappearence_titles_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_titles_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_titles_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Title.M">
-        <item name="android:textSize">@dimen/textappearence_titlem_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_titlem_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_titlem_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Title.L">
-        <item name="android:textSize">@dimen/textappearence_titlel_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_titlel_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_titlel_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Subtitle.S">
-        <item name="android:textSize">@dimen/textappearence_titles_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_titles_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_titles_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Subtitle.M">
-        <item name="android:textSize">@dimen/textappearence_titlem_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_titlem_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_titlem_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Subtitle.L">
-        <item name="android:textSize">@dimen/textappearence_titlel_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_titlel_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_titlel_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Body.S">
-        <item name="android:textSize">@dimen/textappearence_bodys_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_bodys_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_bodys_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Body.M">
-        <item name="android:textSize">@dimen/textappearence_bodym_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_bodym_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_bodym_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Body.L">
-        <item name="android:textSize">@dimen/textappearence_bodyl_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_bodyl_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_bodyl_letter_spacing</item>
-    </style>
-
-    <style name="TextAppearance.JustBooks.Intermedium.S">
-        <item name="android:textSize">@dimen/textappearence_titles_text_size</item>
-        <item name="android:lineSpacingExtra">@dimen/textappearence_titles_line_spacing</item>
-        <item name="android:letterSpacing">@dimen/textappearence_titles_letter_spacing</item>
+    <style name="TextAppearance.JustBooks.Subtitle2.SemiBold" parent="TextAppearance.MaterialComponents.Subtitle2">
+        <item name="fontFamily">@font/open_sans_semibold</item>
+        <item name="android:fontFamily">@font/open_sans_semibold</item>
+        <item name="android:textSize">14sp</item>
     </style>
 
 

@@ -13,46 +13,56 @@
         android:layout_margin="@dimen/spacing_medium"
         android:padding="@dimen/spacing_small">
 
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/spacing_medium"
+            android:breakStrategy="high_quality"
+            android:textAlignment="textStart"
+            android:textAppearance="@style/TextAppearance.JustBooks.Headline6"
+            app:layout_constraintBottom_toTopOf="@+id/ivImage"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Titulo" />
+
+
         <ImageView
             android:id="@+id/ivImage"
             android:layout_width="126dp"
             android:layout_height="166dp"
             android:src="@drawable/ic_book"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintEnd_toStartOf="@+id/tvSubtitle"/>
 
-        <TextView
-            android:id="@+id/tvTitle"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_margin="@dimen/spacing_medium"
-            android:text="Titulo"
-            android:textAlignment="textStart"
-            android:theme="@style/TextAppearance.JustBooks.Title.L"
-            app:layout_constraintStart_toEndOf="@+id/ivImage"
-            app:layout_constraintTop_toTopOf="parent" />
 
         <TextView
             android:id="@+id/tvSubtitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
-            android:text="Subtitulo"
+            android:ellipsize="end"
+            android:maxLines="2"
             android:textAlignment="textStart"
-            android:theme="@style/TextAppearance.JustBooks.Subtitle.S"
+            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle2"
             app:layout_constraintStart_toEndOf="@+id/ivImage"
-            app:layout_constraintTop_toBottomOf="@id/tvTitle" />
+            app:layout_constraintTop_toBottomOf="@id/tvTitle"
+            tools:text="Subtitulo" />
 
         <TextView
             android:id="@+id/tvAuthor"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/spacing_medium"
-            android:text="Subtitulo"
+            android:ellipsize="end"
+            android:maxLines="1"
             android:textAlignment="textStart"
-            android:theme="@style/TextAppearance.JustBooks.Body.L"
+            android:textAppearance="@style/TextAppearance.JustBooks.Caption"
             app:layout_constraintStart_toEndOf="@+id/ivImage"
-            app:layout_constraintTop_toBottomOf="@id/tvSubtitle" />
+            app:layout_constraintTop_toBottomOf="@id/tvSubtitle"
+            tools:text="Subtitulo" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:id="@+id/constraintLayout"
@@ -69,9 +79,8 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:layout_marginStart="@dimen/spacing_medium"
                 android:text="@string/published_date_lbl"
-                android:theme="@style/TextAppearance.JustBooks.Intermedium"
+                android:textAppearance="@style/TextAppearance.JustBooks.Caption"
                 app:layout_constraintBottom_toTopOf="@id/tvPublishedDate"
                 app:layout_constraintEnd_toStartOf="@+id/vDivider"
                 app:layout_constraintStart_toStartOf="parent"
@@ -82,12 +91,12 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
-                android:text="@string/published_date_lbl"
-                android:theme="@style/TextAppearance.JustBooks.Body.S"
+                android:textAppearance="@style/TextAppearance.JustBooks.Body2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="@+id/vDivider"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@id/tvPublishedDateLbl" />
+                app:layout_constraintTop_toBottomOf="@id/tvPublishedDateLbl"
+                tools:text="@string/published_date_lbl" />
 
             <View
                 android:id="@+id/vDivider"
@@ -104,7 +113,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:text="@string/page_count_lbl"
-                android:theme="@style/TextAppearance.JustBooks.Intermedium"
+                android:textAppearance="@style/TextAppearance.JustBooks.Caption"
                 app:layout_constraintBottom_toTopOf="@+id/tvPagesQuantity"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/vDivider"
@@ -114,13 +123,13 @@
                 android:id="@+id/tvPagesQuantity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="@string/published_date_lbl"
                 android:textAlignment="textStart"
-                android:theme="@style/TextAppearance.JustBooks.Body.S"
+                android:textAppearance="@style/TextAppearance.JustBooks.Body2"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toEndOf="@+id/vDivider"
-                app:layout_constraintTop_toBottomOf="@id/tvPagesCountLbl" />
+                app:layout_constraintTop_toBottomOf="@id/tvPagesCountLbl"
+                tools:text="@string/published_date_lbl" />
 
         </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -129,8 +138,7 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Descripcion"
-            android:theme="@style/TextAppearance.JustBooks.Intermedium"
-            app:layout_constraintBottom_toBottomOf="@id/tvDescription"
+            android:textAppearance="@style/TextAppearance.JustBooks.Caption"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/constraintLayout" />
@@ -140,11 +148,12 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="@dimen/spacing_small"
-            android:text="Descripcion"
-            android:theme="@style/TextAppearance.JustBooks.Body.S"
+            android:textAppearance="@style/TextAppearance.JustBooks.Body2"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionLbl" />
+            app:layout_constraintTop_toBottomOf="@+id/tvDescriptionLbl"
+            tools:text="Descripcion" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
+
 </FrameLayout>

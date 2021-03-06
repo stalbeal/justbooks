@@ -40,7 +40,7 @@ class BooksHomeViewModel @Inject constructor(
                     getCategoriesUseCase.execute()
                 )
             )
-        }
+        }.flowOn(coroutineContextProvider.backgroundDispatcher)
 
     private fun getBooks(): Flow<BooksHomeResult> =
         getBooksUseCase.execute().map {

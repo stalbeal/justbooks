@@ -28,8 +28,7 @@
             android:layout_marginStart="@dimen/spacing_small"
             android:layout_marginEnd="@dimen/spacing_small"
             android:text="Newest"
-            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
-            android:textStyle="bold"
+            android:textAppearance="@style/TextAppearance.JustBooks.Caption"
             app:layout_constraintEnd_toStartOf="@id/vSeparator"
             app:layout_constraintTop_toBottomOf="@+id/rvCategories" />
 
@@ -50,7 +49,7 @@
             android:layout_marginStart="@dimen/spacing_small"
             android:layout_marginEnd="@dimen/spacing_small"
             android:text="Relevance"
-            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
+            android:textAppearance="@style/TextAppearance.JustBooks.Caption"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/rvCategories" />

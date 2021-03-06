@@ -36,7 +36,7 @@
             android:backgroundTint="@color/primaryColor"
             android:elevation="10dp"
             android:text="Listo"
-            android:textAppearance="@style/TextAppearance.JustBooks.Title.S"
+            android:textAppearance="@style/TextAppearance.JustBooks.Button"
             android:textColor="@color/primaryTextColor"
              />
 

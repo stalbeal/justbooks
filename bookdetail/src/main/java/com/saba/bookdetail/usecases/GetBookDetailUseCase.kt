@@ -9,8 +9,8 @@ import javax.inject.Inject
 
 class GetBookDetailUseCase @Inject constructor(private val bookDetailRepository: BookDetailRepository) {
 
-    fun execute(isbn: String): Flow<Book> = flow<Book> {
-        emit(bookDetailRepository.getBookByIsbn(isbn))
+    suspend fun execute(isbn: String): Book {
+        return bookDetailRepository.getBookByIsbn(isbn)
     }
 
 }

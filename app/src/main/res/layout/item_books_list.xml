@@ -42,7 +42,7 @@
                 android:gravity="left"
                 android:maxLines="2"
                 android:text="titulo"
-                android:textAppearance="@style/TextAppearance.JustBooks.Title.S"
+                android:textAppearance="@style/TextAppearance.JustBooks.ListTitle"
                 android:textColor="@color/steel_gray"
                 android:textStyle="bold" />
 
@@ -55,7 +55,7 @@
                 android:gravity="left"
                 android:maxLines="2"
                 android:text="titulo"
-                android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
+                android:textAppearance="@style/TextAppearance.JustBooks.Caption"
                 android:textColor="@color/steel_gray" />
 
 
@@ -84,7 +84,7 @@
             android:gravity="center_vertical"
             android:maxLines="1"
             android:text="titulo"
-            android:textAppearance="@style/TextAppearance.JustBooks.Subtitle.S"
+            android:textAppearance="@style/TextAppearance.JustBooks.Caption"
             android:textColor="@color/steel_gray"
             android:visibility="gone"
             app:layout_constraintBottom_toBottomOf="@id/rbBookRating"
