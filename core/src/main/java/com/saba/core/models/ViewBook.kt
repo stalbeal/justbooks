@@ -1,7 +1,11 @@
 package com.saba.core.models
 
+import android.os.Parcelable
+import kotlinx.android.parcel.Parcelize
+
+@Parcelize
 class ViewBook(
-    val industryIdentifier: List<IndustryIdentifier>,
+    val industryIdentifier: List<IndustryIdentifier>?,
     val title: String,
     val subtitle: String?,
     val authors: List<String>,
@@ -15,9 +19,9 @@ class ViewBook(
     val mainCategory: String?,
     val categories: List<String>?,
     val contentVersion: String?,
-    val language: String,
+    val language: String?,
     val googleBooksId: String
-) {
+) : Parcelable {
     constructor(book: Book) : this(
         book.industryIdentifiers,
         book.title,

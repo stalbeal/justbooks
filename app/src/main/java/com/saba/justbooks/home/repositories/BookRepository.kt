@@ -4,7 +4,7 @@ import com.saba.core.models.Book
 
 interface BookRepository {
 
-    suspend fun getBooksByCategories(query: String) : List<Book>
+    suspend fun getBooksByCategories(subject: String) : List<Book>
 
 }
 

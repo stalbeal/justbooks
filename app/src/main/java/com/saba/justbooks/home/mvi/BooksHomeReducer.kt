@@ -15,19 +15,29 @@ class BooksHomeReducer @Inject constructor() : Reducer<BooksHomeResult, BooksHom
                 books = null,
                 error = null
             )
+            is BooksHomeResult.FoundCachedCategories-> stateBooks.copy(
+                isIdling = false,
+                isLoading = false,
+                categories = from.categories,
+                error = null
+            )
             is BooksHomeResult.CategoriesObtained -> stateBooks.copy(
                 isIdling = false,
                 isLoading = false,
                 categories = from.categories.map {
                     ViewCategory(it)
                 },
-                books = null,
+                error = null
+            )
+            is BooksHomeResult.FoundCachedBooks -> stateBooks.copy(
+                isIdling = false,
+                isLoading = false,
+                books = from.books,
                 error = null
             )
             is BooksHomeResult.BooksObtained -> stateBooks.copy(
                 isIdling = false,
                 isLoading = false,
-                categories = null,
                 books = from.books.map {
                     ViewBook(it)
                 },
@@ -41,7 +51,6 @@ class BooksHomeReducer @Inject constructor() : Reducer<BooksHomeResult, BooksHom
             is BooksHomeResult.BooksByCategoriesObtained -> stateBooks.copy(
                 isIdling = false,
                 isLoading = false,
-                categories = null,
                 books = from.books.map {
                     ViewBook(it)
                 },

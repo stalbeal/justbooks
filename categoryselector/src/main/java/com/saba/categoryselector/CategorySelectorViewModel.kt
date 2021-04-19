@@ -4,7 +4,7 @@ import com.saba.categoryselector.mvi.CategorySelectorResult
 import com.saba.categoryselector.mvi.CategorySelectorViewState
 import com.saba.categoryselector.mvi.CategorySelectorWish
 import com.saba.core.usecases.category.GetCategoriesUseCase
-import com.saba.core.base.AbstractViewModel
+import com.saba.core.base.AbstractViewModelCompat
 import com.saba.core.base.CoroutineContextProvider
 import com.saba.core.base.Reducer
 import com.saba.core.usecases.category.GetCategoryUseCase
@@ -21,7 +21,7 @@ class CategorySelectorViewModel @Inject constructor(
     override val reducer: Reducer<@JvmSuppressWildcards CategorySelectorResult,@JvmSuppressWildcards  CategorySelectorViewState>,
     override val coroutineContextProvider: CoroutineContextProvider
 ) :
-    AbstractViewModel<CategorySelectorWish, CategorySelectorResult, CategorySelectorViewState>(
+    AbstractViewModelCompat<CategorySelectorWish, CategorySelectorResult, CategorySelectorViewState>(
         CategorySelectorViewState.init()
     ) {
     override suspend fun getResult(wish: CategorySelectorWish): Flow<CategorySelectorResult> {

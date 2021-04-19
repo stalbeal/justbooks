@@ -1,17 +1,21 @@
 package com.saba.justbooks.home.mvi
 
+import android.os.Parcelable
 import com.saba.core.adapter.ViewCategory
 import com.saba.core.base.ViewState
 import com.saba.core.models.ViewBook
-import com.saba.justbooks.home.mvi.BooksHomeFailure
+import kotlinx.android.parcel.Parcelize
+import kotlinx.android.parcel.RawValue
+import java.io.Serializable
 
+@Parcelize
 data class BooksHomeViewState(
     override val isIdling: Boolean,
     val isLoading: Boolean,
-    val books: Collection<ViewBook>?,
-    val categories: Collection<ViewCategory>?,
+    val books: @RawValue Collection<ViewBook>?,
+    val categories: @RawValue Collection<ViewCategory>?,
     val error: BooksHomeFailure?
-) : ViewState {
+) : ViewState, Parcelable {
 
     companion object {
         fun init() = BooksHomeViewState(
@@ -23,3 +27,4 @@ data class BooksHomeViewState(
         )
     }
 }
+

@@ -36,6 +36,7 @@ class ErrorInterceptor : Interceptor {
                 HttpURLConnection.HTTP_CONFLICT -> NetworkException.APIKeyNotFound("Api key not found")
                 HttpURLConnection.HTTP_INTERNAL_ERROR -> NetworkException.Internal(response.message)
                 else -> NetworkException.Unknown(response.message, response.code)
+                //429 exceso de queries
             }
 
             throw exception
@@ -44,4 +45,5 @@ class ErrorInterceptor : Interceptor {
         return response
     }
 }
+
 

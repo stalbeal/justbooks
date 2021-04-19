@@ -36,6 +36,7 @@ class CategoryRepositoryImpl @Inject constructor(private val categoryDao: Catego
 
     override fun getSelectedCategories() :  Flow<Collection<Category>>{
         return categoryDao.getAll().map {categories ->
+
             categories.map {
                 it.toCategory()
             }

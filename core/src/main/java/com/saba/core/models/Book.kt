@@ -3,7 +3,7 @@ package com.saba.core.models
 import com.saba.core.network.models.APIItemResponse
 
 data class Book(
-    val industryIdentifiers: List<IndustryIdentifier>,
+    val industryIdentifiers: List<IndustryIdentifier>?,
     val title: String,
     val subtitle: String?,
     val authors: List<String>?,
@@ -17,11 +17,11 @@ data class Book(
     val mainCategory: String?,
     val categories: List<String>? = listOf(),
     val contentVersion: String?,
-    val language: String,
+    val language: String?,
     val googleBooksId: String
 ) {
     constructor(apiItemResponse: APIItemResponse) : this(
-        apiItemResponse.bookInfo.industryIdentifier!!.map {
+        apiItemResponse.bookInfo.industryIdentifier?.map {
             IndustryIdentifier(it)
         },
         apiItemResponse.bookInfo.title,

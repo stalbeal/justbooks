@@ -14,13 +14,17 @@ class GetBooksByCategoryUseCase @Inject constructor(
 ) {
 
     fun execute(categoryName: String): Flow<Collection<Book>> = flow {
-        emit(bookRepository.getBooksByCategories("subject: $categoryName"))
+        emit(bookRepository.getBooksByCategories(makeQuery(categoryName)))
     }.map { booksByCategory ->
         val bookSet = HashSet<Book>()
         booksByCategory.map { books ->
             bookSet.addAll(listOf(books))
         }
         bookSet
+    }
+
+    private fun makeQuery(category: String): String {
+        return "subject: $category"
     }
 
 }

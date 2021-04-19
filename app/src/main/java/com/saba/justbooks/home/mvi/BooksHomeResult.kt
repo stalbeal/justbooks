@@ -1,8 +1,10 @@
 package com.saba.justbooks.home.mvi
 
+import com.saba.core.adapter.ViewCategory
 import com.saba.core.base.Result
 import com.saba.core.usecases.category.model.Category
 import com.saba.core.models.Book
+import com.saba.core.models.ViewBook
 
 sealed class BooksHomeResult : Result {
 
@@ -12,6 +14,8 @@ sealed class BooksHomeResult : Result {
     data class CategoriesObtained(val categories: Collection<Category>) : BooksHomeResult()
     data class BooksByCategoriesObtained(val books: Collection<Book>) : BooksHomeResult()
     data class Error(val error: BooksHomeFailure) : BooksHomeResult()
+    data class FoundCachedCategories(val categories: Collection<ViewCategory>): BooksHomeResult()
+    data class FoundCachedBooks(val books: Collection<ViewBook>) : BooksHomeResult()
 
 }
 

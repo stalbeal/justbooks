@@ -18,5 +18,5 @@ data class APIBookResponse(
 @SerializedName("mainCategory") val mainCategory: String?,
 @SerializedName("categories") val categories: List<String>? = listOf(),
 @SerializedName("contentVersion") val contentVersion: String?,
-@SerializedName("language") val language: String
+@SerializedName("language") val language: String?
 )

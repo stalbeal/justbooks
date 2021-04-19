@@ -28,6 +28,7 @@
             android:layout_marginStart="@dimen/spacing_small"
             android:layout_marginEnd="@dimen/spacing_small"
             android:text="Newest"
+            android:visibility="gone"
             android:textAppearance="@style/TextAppearance.JustBooks.Caption"
             app:layout_constraintEnd_toStartOf="@id/vSeparator"
             app:layout_constraintTop_toBottomOf="@+id/rvCategories" />
@@ -37,6 +38,7 @@
             android:layout_width="3dp"
             android:layout_height="0dp"
             android:layout_margin="4dp"
+            android:visibility="gone"
             android:background="@drawable/vertical_separator"
             app:layout_constraintEnd_toStartOf="@id/tvOrderByRelevance"
             app:layout_constraintBottom_toBottomOf="@id/tvOrderByNewest"
@@ -49,6 +51,7 @@
             android:layout_marginStart="@dimen/spacing_small"
             android:layout_marginEnd="@dimen/spacing_small"
             android:text="Relevance"
+            android:visibility="gone"
             android:textAppearance="@style/TextAppearance.JustBooks.Caption"
             android:textStyle="bold"
             app:layout_constraintEnd_toEndOf="parent"

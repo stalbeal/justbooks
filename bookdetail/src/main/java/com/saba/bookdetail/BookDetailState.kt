@@ -18,3 +18,4 @@ data class BookDetailState(override val isIdling: Boolean,
         )
     }
 }
+

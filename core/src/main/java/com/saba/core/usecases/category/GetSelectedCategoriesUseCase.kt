@@ -13,7 +13,7 @@ class GetSelectedCategoriesUseCase @Inject constructor(private val categoryRepos
     fun execute(): Flow<Collection<Category>> {
         return categoryRepository.getSelectedCategories().map {
             if(it.isEmpty()){
-                throw NullPointerException()
+                return@map categoryRepository.getCategories()
             }
             it
         }

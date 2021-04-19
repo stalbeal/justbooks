@@ -26,7 +26,7 @@ import javax.inject.Inject
 class BookDetailFragment : Fragment() {
 
     @Inject
-    lateinit var bookDetailViewModel : BookDetailViewModel
+    lateinit var bookDetailViewModel: BookDetailViewModel
 
     private lateinit var binding: FragmentBookDetailBinding
 
@@ -47,8 +47,8 @@ class BookDetailFragment : Fragment() {
 
     }
 
-    private fun observeState(){
-        lifecycleScope.launchWhenResumed{
+    private fun observeState() {
+        lifecycleScope.launchWhenResumed {
             bookDetailViewModel.copyState.collect { state ->
                 when {
                     //state.isIdling -> onIdling()
@@ -77,7 +77,9 @@ class BookDetailFragment : Fragment() {
         }
         binding.tvTitle.text = viewBook.title
         binding.tvSubtitle.text = viewBook.subtitle
-        binding.tvDescription.text = Html.fromHtml(viewBook.description)
+        viewBook.description?.let {
+            binding.tvDescription.text = Html.fromHtml(it)
+        }
         binding.tvAuthor.text = viewBook.authors.joinToString(", ")
         binding.tvPagesQuantity.text = viewBook.pageCount.toString()
         binding.tvPublishedDate.text = viewBook.publishedDate

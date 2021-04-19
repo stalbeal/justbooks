@@ -6,6 +6,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.findNavController
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -14,11 +15,11 @@ import com.saba.core.adapter.CategorySelectorAdapter
 import com.saba.core.adapter.ViewCategory
 import com.saba.core.di.CoreComponentProvider
 import com.saba.core.models.ViewBook
-import com.saba.justbooks.home.mvi.BooksHomeViewState
 import com.saba.justbooks.databinding.FragmentBooksHomeBinding
 import com.saba.justbooks.home.adapter.BooksAdapter
 import com.saba.justbooks.home.adapter.BooksClickListener
 import com.saba.justbooks.home.di.DaggerHomeComponent
+import com.saba.justbooks.home.mvi.BooksHomeViewState
 import com.saba.justbooks.home.mvi.BooksHomeWish
 import kotlinx.coroutines.flow.launchIn
 import kotlinx.coroutines.flow.onEach
@@ -34,11 +35,17 @@ import javax.inject.Inject
 class BooksHomeFragment : Fragment() {
 
     @Inject
-    lateinit var viewModel: BooksHomeViewModel
+    lateinit var factory: BooksHomeViewModel.Factory
 
-    private lateinit var binding : FragmentBooksHomeBinding
+    private val viewModel: BooksHomeViewModel by viewModels {
+        SavedInstanceViewModelFactory({
+            factory.create(it)
+        }, this)
+    }
 
-    private lateinit var currentStateBooks : BooksHomeViewState
+    private lateinit var binding: FragmentBooksHomeBinding
+
+    private lateinit var currentStateBooks: BooksHomeViewState
 
     override fun onAttach(context: Context) {
         super.onAttach(context)
@@ -57,7 +64,11 @@ class BooksHomeFragment : Fragment() {
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?
     ): View? {
-        binding = FragmentBooksHomeBinding.inflate(LayoutInflater.from(requireContext()), container, false)
+        binding = FragmentBooksHomeBinding.inflate(
+            LayoutInflater.from(requireContext()),
+            container,
+            false
+        )
         return binding.root
     }
 
@@ -65,15 +76,28 @@ class BooksHomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         setup()
         setupViewModelInteractions()
+
+
     }
+
 
     @ExperimentalStdlibApi
     private fun setup() {
 
         with(binding.rvCategories) {
-            val colorsList = arrayOf(R.color.red, R.color.pink, R.color.deep_purple, R.color.indigo, R.color.blue, R.color.teal, R.color.green, R.color.deep_orange)
+            val colorsList = arrayOf(
+                R.color.red,
+                R.color.pink,
+                R.color.deep_purple,
+                R.color.indigo,
+                R.color.blue,
+                R.color.teal,
+                R.color.green,
+                R.color.deep_orange
+            )
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL ,false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.HORIZONTAL, false)
             adapter = CategorySelectorAdapter(colorsList, object : CategoryClickListener {
 
                 override fun onClick(categoryText: String) {
@@ -84,11 +108,13 @@ class BooksHomeFragment : Fragment() {
 
         with(binding.rvBooks) {
             setHasFixedSize(true)
-            layoutManager = LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL ,false)
+            layoutManager =
+                LinearLayoutManager(requireContext(), LinearLayoutManager.VERTICAL, false)
             adapter = BooksAdapter(object : BooksClickListener {
                 override fun onClick(book: ViewBook) {
 
-                    val action = BooksHomeFragmentDirections.actionBooksHomeFragmentToBookDetail(book.googleBooksId)
+                    val action =
+                        BooksHomeFragmentDirections.actionBooksHomeFragmentToBookDetail(book.googleBooksId)
                     view?.findNavController()?.navigate(action)
                 }
             })
@@ -106,13 +132,19 @@ class BooksHomeFragment : Fragment() {
             when {
                 state.isIdling -> onIdling()
                 state.isLoading -> onLoading()
-                state.categories != null -> showCategories(state.categories)
-                state.books != null -> showBooks(state.books)
             }
+
+            if(state.books != null ){
+                showBooks(state.books)
+            }
+
+            if(state.categories != null) {
+                showCategories(state.categories)
+            }
+
         }.launchIn(lifecycleScope)
         viewModel.onWish(BooksHomeWish.GetCategories)
         viewModel.onWish(BooksHomeWish.GetBooks)
-
     }
 
     private fun showBooks(books: Collection<ViewBook>) {
